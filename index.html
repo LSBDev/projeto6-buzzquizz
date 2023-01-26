@@ -8,14 +8,14 @@
   <title>BuzzQuizz</title>
 </head>
 <body>
-  <header class="hub__header">
-    <h1 class="hub__title">
+  <header class="global__header">
+    <h1 class="global__title">
       BuzzQuizz
     </h1>
   </header>
   <!-- mudar a classe do header geral-->
   <!-- Tela 1: todos os quizes. -->
-  <section class="hub__quizz">
+  <section class="hub__quizz hidden">
     <main class="hub__main">
       <section class="my__quizzes">
         <p>Você não criou nenhum <br>
@@ -64,7 +64,8 @@
         <div class="quizz__main">
           <div class="alternative">
             <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
+            <h4>doguinhos - limitar caracteres</h4>
+            <!-- limitar caracteres pra não estourar -->
           </div>
           <div class="alternative">
             <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
@@ -153,6 +154,18 @@
         </div>
       </div>
     </main>
+  </section>
+
+  <!-- Tela 3: Criando o Quizz -->
+  <section class="create__quizz">
+    <div class="start">
+      <h1 class="start__title">Comece pelo começo</h1>
+      <input type="text">
+      <input type="text">
+      <input type="text">
+      <input type="text">
+    </div>
+
   </section>
 
 
