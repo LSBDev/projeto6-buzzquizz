@@ -133,6 +133,7 @@ h2 {
   max-width: 620px;
   margin: 70px auto;
   .quizz__header {
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,6 +148,7 @@ h2 {
       line-height: 25px;
     }
   }
+ 
 }
 .quizz__main {
   display: flex;
@@ -170,4 +172,16 @@ h2 {
     line-height: 24px;
     color: #000000;
   }
+}
+
+@media  (max-width: 620px){
+  .questions__container {
+    max-width: 100%;
+    
+    .quizz__header{
+      margin: 0 10px;
+    }
+
+  }
+
 }

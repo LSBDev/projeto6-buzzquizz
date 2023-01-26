@@ -120,6 +120,7 @@ h2 {
   margin: 70px auto;
 }
 .questions__container .quizz__header {
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,4 +159,13 @@ h2 {
   font-weight: 700;
   line-height: 24px;
   color: #000000;
+}
+
+@media (max-width: 620px) {
+  .questions__container {
+    max-width: 100%;
+  }
+  .questions__container .quizz__header {
+    margin: 0 10px;
+  }
 }/*# sourceMappingURL=style.css.map */
