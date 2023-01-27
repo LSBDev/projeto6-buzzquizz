@@ -123,7 +123,7 @@ h2 {
   margin: 0 5px;
   background: #434CA0;
 }
-.questions__container .quizz__header h2 {
+.questions__container .quizz__header .question {
   color: white;
   font-family: "Roboto";
   font-weight: 700;
@@ -154,4 +154,166 @@ h2 {
   font-weight: 700;
   line-height: 24px;
   color: #000000;
+}
+
+@media (max-width: 720px) {
+  .start {
+    width: 100%;
+  }
+  .start .start__data {
+    background: white;
+    width: 100%;
+    margin: auto;
+  }
+  .start .start__data input {
+    width: 100%;
+    margin: 0px 0px 9px 0px;
+  }
+}
+@media (max-width: 540px) {
+  .start {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  .start .start__data {
+    width: 100%;
+  }
+  .start .start__data input {
+    width: 100%;
+    margin: auto;
+  }
+}
+::-moz-placeholder {
+  color: #BABABA;
+}
+:-ms-input-placeholder {
+  color: #BABABA;
+}
+::placeholder {
+  color: #BABABA;
+}
+
+.create__quizz, .creating__quizz {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 70px auto 20px auto;
+}
+.start .start__title {
+  margin-bottom: 27px;
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #000000;
+}
+.start .start__data {
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 20px;
+  width: 600px;
+}
+.start .start__data label {
+  text-align: start;
+  padding: 20px;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #000000;
+}
+.start .start__data input {
+  overflow: hidden;
+  font-family: "Roboto";
+  font-style: italic;
+  font-size: 19px;
+  padding-left: 23px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  margin: 0px 0px 9px 16px;
+  width: 564px;
+  height: 46px;
+}
+.start .button__position {
+  display: flex;
+  justify-content: center;
+}
+.start .start__button {
+  overflow: hidden;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-size: 21px;
+  line-height: 25px;
+  font-weight: 400;
+  background: #EC362D;
+  width: 368px;
+  height: 54px;
+  border-radius: 15px;
+  border: none;
+  justify-content: center;
+  color: white;
+  margin-top: 84px;
+}
+.start .start__button:hover {
+  transition: linear 0.1s;
+  transform: scale(1.05);
+}
+
+.questions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 17px;
+  margin: 20px auto;
+  width: 600px;
+  height: 74px;
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+.questions .start__title {
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #000000;
+}
+.questions ion-icon {
+  font-size: 26px;
+}
+
+.start__button {
+  overflow: hidden;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-size: 21px;
+  line-height: 25px;
+  font-weight: 400;
+  background: #EC362D;
+  width: 368px;
+  height: 54px;
+  border-radius: 15px;
+  border: none;
+  justify-content: center;
+  color: white;
+  margin-top: 84px;
+}
+
+.start__button:hover {
+  transition: linear 0.1s;
+  transform: scale(1.05);
 }/*# sourceMappingURL=style.css.map */
