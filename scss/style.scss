@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 .hidden {
   display: none;
 }
@@ -188,18 +187,17 @@ h2 {
 }
 
 // Tela 3
-
 .create__quizz {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
-
 .start {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   .start__title {
     margin: 71px 0px 27px 0px;
     text-align: center;
@@ -209,16 +207,13 @@ h2 {
     line-height: 26px;
     color: #000000;
   }
-
   .start__data {
     background: #E5E5E5;
-    ;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 600px;
     height: 256px;
-
     input {
       overflow: hidden;
       font-family: 'Roboto';
@@ -234,16 +229,11 @@ h2 {
       height: 46px;
     }
   }
-
-
-
-
   //botão
   .button__position {
     display: flex;
     justify-content: center;
   }
-
   .start__button {
     overflow: hidden;
     cursor: pointer;
@@ -260,47 +250,36 @@ h2 {
     color: white;
     margin-top: 84px;
   }
-
   .start__button:hover {
     transition: linear 0.1s;
     transform: scale(1.05);
   }
 }
-
 @media (max-width: 720px) {
-
   .start {
     width: 100%;
-    
-
     .start__data {
       background: white;
       width: 100%;
       margin: auto;
-
       input {
         width: 100%;
         margin: 0px 0px 9px 0px;
       }
     }
-
   }
 }
-
 @media (max-width: 540px) {
   .start {
     width: 100%;
     height: 100%;
     justify-content: center;
-
     .start__data {
       width: 100%;
-
       input {
         width: 100%;
         margin: auto;
       }
     }
   }
-
 }
