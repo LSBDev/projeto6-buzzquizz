@@ -123,7 +123,7 @@ h2 {
   margin: 0 5px;
   background: #434CA0;
 }
-.questions__container .quizz__header h2 {
+.questions__container .quizz__header .question {
   color: white;
   font-family: "Roboto";
   font-weight: 700;
