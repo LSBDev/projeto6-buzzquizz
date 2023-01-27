@@ -24,7 +24,6 @@
 //     margin: 7px 0;
 //   }
 // }
-
 .hub__main {
   max-width: 1050px;
   margin: auto;
@@ -107,6 +106,7 @@ h2 {
     margin: 7px 5px;
   }
 }
+
 // TELA 2
 .quizz {
   .img {
@@ -134,7 +134,7 @@ h2 {
     height: 140px;
     margin: 0 5px;
     background: #434CA0;
-    h2 {
+    .question {
       color: white;
       font-family: 'Roboto';
       font-weight: 700;
