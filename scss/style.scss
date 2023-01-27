@@ -187,6 +187,34 @@ h2 {
 }
 
 // Tela 3
+@media (max-width: 720px) {
+  .start {
+    width: 100%;
+    .start__data {
+      background: white;
+      width: 100%;
+      margin: auto;
+      input {
+        width: 100%;
+        margin: 0px 0px 9px 0px;
+      }
+    }
+  }
+}
+@media (max-width: 540px) {
+  .start {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    .start__data {
+      width: 100%;
+      input {
+        width: 100%;
+        margin: auto;
+      }
+    }
+  }
+}
 ::placeholder {
   color: #BABABA;
 }
@@ -310,32 +338,4 @@ h2 {
 .start__button:hover {
   transition: linear 0.1s;
   transform: scale(1.05);
-}
-@media (max-width: 720px) {
-  .start {
-    width: 100%;
-    .start__data {
-      background: white;
-      width: 100%;
-      margin: auto;
-      input {
-        width: 100%;
-        margin: 0px 0px 9px 0px;
-      }
-    }
-  }
-}
-@media (max-width: 540px) {
-  .start {
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    .start__data {
-      width: 100%;
-      input {
-        width: 100%;
-        margin: auto;
-      }
-    }
-  }
 }

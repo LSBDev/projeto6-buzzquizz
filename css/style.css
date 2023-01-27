@@ -156,14 +156,40 @@ h2 {
   color: #000000;
 }
 
+@media (max-width: 720px) {
+  .start {
+    width: 100%;
+  }
+  .start .start__data {
+    background: white;
+    width: 100%;
+    margin: auto;
+  }
+  .start .start__data input {
+    width: 100%;
+    margin: 0px 0px 9px 0px;
+  }
+}
+@media (max-width: 540px) {
+  .start {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  .start .start__data {
+    width: 100%;
+  }
+  .start .start__data input {
+    width: 100%;
+    margin: auto;
+  }
+}
 ::-moz-placeholder {
   color: #BABABA;
 }
-
 :-ms-input-placeholder {
   color: #BABABA;
 }
-
 ::placeholder {
   color: #BABABA;
 }
@@ -290,33 +316,4 @@ h2 {
 .start__button:hover {
   transition: linear 0.1s;
   transform: scale(1.05);
-}
-
-@media (max-width: 720px) {
-  .start {
-    width: 100%;
-  }
-  .start .start__data {
-    background: white;
-    width: 100%;
-    margin: auto;
-  }
-  .start .start__data input {
-    width: 100%;
-    margin: 0px 0px 9px 0px;
-  }
-}
-@media (max-width: 540px) {
-  .start {
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-  }
-  .start .start__data {
-    width: 100%;
-  }
-  .start .start__data input {
-    width: 100%;
-    margin: auto;
-  }
 }/*# sourceMappingURL=style.css.map */
