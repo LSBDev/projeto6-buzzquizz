@@ -160,15 +160,79 @@
   <section class="create__quizz">
     <div class="start">
       <h1 class="start__title">Comece pelo começo</h1>
-      <input type="text">
-      <input type="text">
-      <input type="text">
-      <input type="text">
+      <div class="start__data">
+        <input type="text" placeholder="Título do seu quizz" >
+        <input type="text" placeholder="URL da imagem do seu quizz">
+        <input type="text" placeholder="Quantidade de perguntas do quizz">
+        <input type="text" placeholder="Quantidade de níveis do quizz">
+      </div>
+      <div class="button__position">
+        <button class="start__button">Prosseguir pra criar perguntas
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="creating__quizz">
+    <div class="start">
+      <h1 class="start__title">Crie suas perguntas</h1>
+      <div class="start__data">
+        <label for="">Pergunta 1</label>
+        <input type="text" placeholder="Texto da pergunta">
+        <input type="text" placeholder="Cor de fundo da pergunta">
+        <label for="">Resposta Correta</label>
+        <input type="text" placeholder="Resposta correta">
+        <input type="text" placeholder="URL da imagem">
+        <label for="">Respostas incorretas</label>
+        <input type="text" placeholder="Resposta incorreta 1">
+        <input type="text" placeholder="URL da imagem 1">
+        <br>
+        <input type="text" placeholder="Resposta incorreta 2">
+        <input type="text" placeholder="URL da imagem 2">
+        <br>
+        <input type="text" placeholder="Resposta incorreta 3">
+        <input type="text" placeholder="URL da imagem 3">
+      </div>
+    </div>
+    <div class="questions">
+      <h1 class="start__title">pergunta 2</h1>
+      <ion-icon name="create-outline"></ion-icon>
+    </div>
+    <div class="questions">
+      <h1 class="start__title">pergunta 3</h1>
+      <ion-icon name="create-outline"></ion-icon>
+    </div>
+    <div class="button__position">
+      <button class="start__button">Prosseguir pra criar níveis
+      </button>
     </div>
 
+<!-- Níveis -->
+    <div class="start">
+      <h1 class="start__title">Agora, decida os níveis</h1>
+      <div class="start__data">
+        <label for="">Nível 1</label>
+        <input type="text" placeholder="Título do nível">
+        <input type="text" placeholder="% de acerto mínima">
+        <input type="text" placeholder="URL da imagem do nível">
+        <input type="text" placeholder="Descrição do nível">
+      </div>
+    </div>
+    <div class="questions">
+      <h1 class="start__title">Nível 2</h1>
+      <ion-icon name="create-outline"></ion-icon>
+    </div>
+    <div class="questions">
+      <h1 class="start__title">Nível 3</h1>
+      <ion-icon name="create-outline"></ion-icon>
+    </div>
+    <div class="button__position">
+      <button class="start__button">Finalizar Quizz
+      </button>
+    </div>
   </section>
 
-
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   
 
 </body>
