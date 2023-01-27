@@ -156,25 +156,98 @@ h2 {
   color: #000000;
 }
 
-.start {
+.create__quizz {
   display: flex;
   justify-content: center;
+  width: 100%;
+}
+
+.start {
+  display: flex;
   flex-direction: column;
-  max-width: 600px;
+  justify-content: center;
 }
 .start .start__title {
+  margin: 71px 0px 27px 0px;
+  text-align: center;
   font-family: "Roboto";
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 700;
   line-height: 26px;
   color: #000000;
 }
 .start .start__data {
+  background: #E5E5E5;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: center;
+  width: 600px;
   height: 256px;
 }
+.start .start__data input {
+  overflow: hidden;
+  font-family: "Roboto";
+  font-style: italic;
+  font-size: 19px;
+  padding-left: 23px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  margin: 0px 0px 9px 16px;
+  width: 564px;
+  height: 46px;
+}
+.start .button__position {
+  display: flex;
+  justify-content: center;
+}
 .start .start__button {
-  background: rgb(230, 2, 2);
+  overflow: hidden;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-size: 21px;
+  line-height: 25px;
+  font-weight: 400;
+  background: #EC362D;
+  width: 368px;
+  height: 54px;
+  border-radius: 15px;
+  border: none;
+  justify-content: center;
+  color: white;
+  margin-top: 84px;
+}
+.start .start__button:hover {
+  transition: linear 0.1s;
+  transform: scale(1.05);
+}
+
+@media (max-width: 720px) {
+  .start {
+    width: 100%;
+  }
+  .start .start__data {
+    background: white;
+    width: 100%;
+    margin: auto;
+  }
+  .start .start__data input {
+    width: 100%;
+    margin: 0px 0px 9px 0px;
+  }
+}
+@media (max-width: 540px) {
+  .start {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  .start .start__data {
+    width: 100%;
+  }
+  .start .start__data input {
+    width: 100%;
+    margin: auto;
+  }
 }/*# sourceMappingURL=style.css.map */
