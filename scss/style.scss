@@ -187,7 +187,10 @@ h2 {
 }
 
 // Tela 3
-.create__quizz {
+::placeholder {
+  color: #BABABA;
+}
+.create__quizz, .creating__quizz {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -198,8 +201,10 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 70px auto 20px auto;
+  // max-width: 600px;
   .start__title {
-    margin: 71px 0px 27px 0px;
+    margin-bottom: 27px;
     text-align: center;
     font-family: 'Roboto';
     font-size: 23px;
@@ -208,12 +213,22 @@ h2 {
     color: #000000;
   }
   .start__data {
-    background: #E5E5E5;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 20px;
     width: 600px;
-    height: 256px;
+    label {
+    text-align: start;
+    padding: 20px;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    color: #000000;
+    }
     input {
       overflow: hidden;
       font-family: 'Roboto';
@@ -254,6 +269,47 @@ h2 {
     transition: linear 0.1s;
     transform: scale(1.05);
   }
+}
+.questions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 17px;
+  margin: 20px auto;
+  width: 600px;
+  height: 74px;
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  .start__title {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    color: #000000;
+  }
+  ion-icon {
+    font-size: 26px;
+  }
+}
+.start__button {
+  overflow: hidden;
+  cursor: pointer;
+  font-family: 'Roboto';
+  font-size: 21px;
+  line-height: 25px;
+  font-weight: 400;
+  background: #EC362D;
+  width: 368px;
+  height: 54px;
+  border-radius: 15px;
+  border: none;
+  justify-content: center;
+  color: white;
+  margin-top: 84px;
+}
+.start__button:hover {
+  transition: linear 0.1s;
+  transform: scale(1.05);
 }
 @media (max-width: 720px) {
   .start {
