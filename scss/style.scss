@@ -199,13 +199,12 @@ h2 {
 ::placeholder {
   color: #BABABA;
 }
-.create__quizz, .creating__quizz {
+.create__quizz, .creating__quizz, .create__levels {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  
 }
 .start {
   display: flex;

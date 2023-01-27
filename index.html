@@ -13,7 +13,6 @@
       BuzzQuizz
     </h1>
   </header>
-  <!-- mudar a classe do header geral-->
   <!-- Tela 1: todos os quizes. -->
   <section class="hub__quizz ">
     <main class="hub__main">
@@ -156,7 +155,7 @@
     </main>
   </section>
 
-  <!-- Tela 3: Criando o Quizz -->
+  <!-- Tela 3: Criação -->
   <section class="create hidden">
     <section class="create__quizz">
       <div class="start">
@@ -207,34 +206,31 @@
         </button>
       </div>
     </section>
-    <section>
-        <!-- Níveis -->
-        <div class="start">
-          <h1 class="start__title">Agora, decida os níveis</h1>
-          <div class="start__data">
-            <label for="">Nível 1</label>
-            <input type="text" placeholder="Título do nível">
-            <input type="text" placeholder="% de acerto mínima">
-            <input type="text" placeholder="URL da imagem do nível">
-            <input type="text" placeholder="Descrição do nível">
-          </div>
+    <section class="create__levels">
+      <div class="start">
+        <h1 class="start__title">Agora, decida os níveis</h1>
+        <div class="start__data">
+          <label for="">Nível 1</label>
+          <input type="text" placeholder="Título do nível">
+          <input type="text" placeholder="% de acerto mínima">
+          <input type="text" placeholder="URL da imagem do nível">
+          <input type="text" placeholder="Descrição do nível">
         </div>
-        <div class="questions">
-          <h1 class="start__title">Nível 2</h1>
-          <ion-icon name="create-outline"></ion-icon>
-        </div>
-        <div class="questions">
-          <h1 class="start__title">Nível 3</h1>
-          <ion-icon name="create-outline"></ion-icon>
-        </div>
-        <div class="button__position">
-          <button class="start__button">Finalizar Quizz
-          </button>
-        </div>
+      </div>
+      <div class="questions">
+        <h1 class="start__title">Nível 2</h1>
+        <ion-icon name="create-outline"></ion-icon>
+      </div>
+      <div class="questions">
+        <h1 class="start__title">Nível 3</h1>
+        <ion-icon name="create-outline"></ion-icon>
+      </div>
+      <div class="button__position">
+        <button class="start__button">Finalizar Quizz
+        </button>
+      </div>
     </section>
   </section>
- 
-
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="/js/script.js"></script>
