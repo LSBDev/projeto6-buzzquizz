@@ -36,8 +36,7 @@ function togglePergunta(element) {
   element.classList.add('hidden');
   element.nextElementSibling.classList.remove('hidden');
 }
-
-
+// PREENCHENDO "LISTA" DE PERGUNTAS.
 function fillPerguntas() {
   console.log(qntQuestions);
   const perguntas = document.querySelector("#perguntas");
@@ -68,7 +67,6 @@ function fillPerguntas() {
       `;
   }
 }
-
 //TROCA DOS NÍVEIS.
 function toggleNivel(element) {
   element.classList.add('hidden');
@@ -96,9 +94,6 @@ const postQuizz = {
   title: document.querySelector('#title-quizz').value,
   image: document.querySelector('#image-quizz').value
 }
-
-
-
 
 
 const arrayQuestions = [];
@@ -186,11 +181,7 @@ const quizz = `{ //OBJETO
 // axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', quizz)
 
 
-// function postQuizz() {
-//   const criacaoPergunta = document.querySelectorAll('start__data').value;
 
-
-// }
 
 
 
