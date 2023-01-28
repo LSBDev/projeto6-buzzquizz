@@ -89,10 +89,10 @@
       <div class="start">
         <h1 class="start__title">Comece pelo começo</h1>
         <div class="start__data">
-          <input type="text" placeholder="Título do seu quizz" >
-          <input type="text" placeholder="URL da imagem do seu quizz">
-          <input type="text" placeholder="Quantidade de perguntas do quizz">
-          <input type="text" placeholder="Quantidade de níveis do quizz">
+          <input id="title" type="text" placeholder="Título do seu quizz" >
+          <input id="image" type="text" placeholder="URL da imagem do seu quizz">
+          <input id="qntPerguntas" type="text" placeholder="Quantidade de perguntas do quizz">
+          <input id="qntNiveis" type="text" placeholder="Quantidade de níveis do quizz">
         </div>
         <div class="button__position">
           <button class="start__button">Prosseguir pra criar perguntas
@@ -103,37 +103,26 @@
     <section class="creating__quizz">
       <div class="start">
         <h1 class="start__title">Crie suas perguntas</h1>
-        <div class="start__data">
-          <label for="">Pergunta 1</label>
-          <input type="text" placeholder="Texto da pergunta">
-          <input type="text" placeholder="Cor de fundo da pergunta">
-          <label for="">Resposta Correta</label>
-          <input type="text" placeholder="Resposta correta">
-          <input type="text" placeholder="URL da imagem">
-          <label for="">Respostas incorretas</label>
-          <input type="text" placeholder="Resposta incorreta 1">
-          <input type="text" placeholder="URL da imagem 1">
-          <br>
-          <input type="text" placeholder="Resposta incorreta 2">
-          <input type="text" placeholder="URL da imagem 2">
-          <br>
-          <input type="text" placeholder="Resposta incorreta 3">
-          <input type="text" placeholder="URL da imagem 3">
+        <div class="start__question">
         </div>
-      </div>
-      <div class="questions">
-        <h1 class="start__title">pergunta 2</h1>
-        <ion-icon name="create-outline"></ion-icon>
-      </div>
-      <div class="questions">
-        <h1 class="start__title">pergunta 3</h1>
-        <ion-icon name="create-outline"></ion-icon>
-      </div>
+        <div class="questions" onclick="togglePergunta(this)">
+          <h1 class="start__title">Pergunta 2</h1>
+          <ion-icon name="create-outline"></ion-icon>
+        </div>
+        <div class="start__question hidden"></div>
+        <div class="questions" onclick="togglePergunta(this)">
+          <h1 class="start__title">Pergunta 3</h1>
+          <ion-icon name="create-outline"></ion-icon>
+        </div>
+        <div class="start__question hidden"></div>       
+      </div>      
       <div class="button__position">
         <button class="start__button">Prosseguir pra criar níveis
         </button>
       </div>
     </section>
+
+    <!-- CRIANDO NÍVEIS -->
     <section class="create__levels">
       <div class="start">
         <h1 class="start__title">Agora, decida os níveis</h1>
@@ -159,7 +148,7 @@
       </div>
     </section>
   </section>
-
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="/js/script.js"></script>
