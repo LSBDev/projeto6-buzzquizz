@@ -89,10 +89,10 @@
       <div class="start">
         <h1 class="start__title">Comece pelo começo</h1>
         <div class="start__data">
-          <input id="title" type="text" placeholder="Título do seu quizz" >
-          <input id="image" type="text" placeholder="URL da imagem do seu quizz">
-          <input id="qntPerguntas" type="text" placeholder="Quantidade de perguntas do quizz">
-          <input id="qntNiveis" type="text" placeholder="Quantidade de níveis do quizz">
+          <input id="title-quizz" type="text" placeholder="Título do seu quizz">
+          <input id="image-quizz" type="text" placeholder="URL da imagem do seu quizz">
+          <input id="qnt-perguntas-quizz" type="text" placeholder="Quantidade de perguntas do quizz">
+          <input id="qnt-niveis" type="text" placeholder="Quantidade de níveis do quizz">
         </div>
         <div class="button__position">
           <button class="start__button" onclick="changeToCreateQuestions()">Prosseguir pra criar perguntas
@@ -101,9 +101,9 @@
       </div>
     </section>
     <section class="creating__quizz hidden">
-      <div class="start">
+      <div id="perguntas" class="start">
         <h1 class="start__title">Crie suas perguntas</h1>
-        <div class="start__question"></div>
+        <!-- <div class="start__question"></div>
         <div class="questions" onclick="togglePergunta(this)">
           <h1 class="start__title">Pergunta 2</h1>
           <ion-icon name="create-outline"></ion-icon>
@@ -113,7 +113,7 @@
           <h1 class="start__title">Pergunta 3</h1>
           <ion-icon name="create-outline"></ion-icon>
         </div>
-        <div class="start__question hidden"></div>       
+        <div class="start__question hidden"></div>        -->
       </div>      
       <div class="button__position">
         <button class="start__button" onclick="changeToCreateLevels()">Prosseguir pra criar níveis
@@ -142,6 +142,8 @@
       </div>
     </section>
   </section>
+
+
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

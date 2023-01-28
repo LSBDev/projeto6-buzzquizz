@@ -24,6 +24,8 @@
 //     margin: 7px 0;
 //   }
 // }
+
+// TELA 1 - HUB DE QUIZZ
 .hub__main {
   max-width: 1050px;
   margin: auto;
@@ -107,7 +109,7 @@ h2 {
   }
 }
 
-// TELA 2
+// TELA 2 - JOGANDO O QUIZZ
 .quizz {
   .img {
     display: flex;
@@ -167,7 +169,7 @@ h2 {
   }
 }
 
-// Tela 3
+// Tela 3 - CRIANDO QUIZZ E NÍVEIS.
 @media (max-width: 720px) {
   .start {
     width: 100%;
@@ -211,8 +213,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   margin: 70px auto 20px auto;
-  // max-width: 600px;
-  .start__title {
+  &__title {
     margin-bottom: 27px;
     text-align: center;
     font-family: 'Roboto';
@@ -221,7 +222,7 @@ h2 {
     line-height: 26px;
     color: #000000;
   }
-  .start__data, .start__levels, .start__question {
+  &__data, &__levels, &__question {
     background: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     display: flex;
@@ -320,3 +321,4 @@ h2 {
   transition: linear 0.1s;
   transform: scale(1.05);
 }
+

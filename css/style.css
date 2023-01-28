@@ -208,7 +208,7 @@ h2 {
   justify-content: center;
   margin: 70px auto 20px auto;
 }
-.start .start__title {
+.start__title {
   margin-bottom: 27px;
   text-align: center;
   font-family: "Roboto";
@@ -217,7 +217,7 @@ h2 {
   line-height: 26px;
   color: #000000;
 }
-.start .start__data, .start .start__levels, .start .start__question {
+.start__data, .start__levels, .start__question {
   background: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -226,7 +226,7 @@ h2 {
   padding-bottom: 20px;
   width: 600px;
 }
-.start .start__data label, .start .start__levels label, .start .start__question label {
+.start__data label, .start__levels label, .start__question label {
   text-align: start;
   padding: 20px;
   font-family: "Roboto";
@@ -235,7 +235,7 @@ h2 {
   line-height: 26px;
   color: #000000;
 }
-.start .start__data input, .start .start__levels input, .start .start__question input {
+.start__data input, .start__levels input, .start__question input {
   overflow: hidden;
   font-family: "Roboto";
   font-style: italic;
