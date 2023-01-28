@@ -1,5 +1,4 @@
 
-
 function changeToQuizzHub() {
   document.querySelector('.hub__quizz').classList.remove('hidden');
   document.querySelector('.create').classList.add('hidden');
