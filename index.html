@@ -95,16 +95,15 @@
           <input id="qntNiveis" type="text" placeholder="Quantidade de níveis do quizz">
         </div>
         <div class="button__position">
-          <button class="start__button">Prosseguir pra criar perguntas
+          <button class="start__button" onclick="changeToCreateQuestions()">Prosseguir pra criar perguntas
           </button>
         </div>
       </div>
     </section>
-    <section class="creating__quizz">
+    <section class="creating__quizz hidden">
       <div class="start">
         <h1 class="start__title">Crie suas perguntas</h1>
-        <div class="start__question">
-        </div>
+        <div class="start__question"></div>
         <div class="questions" onclick="togglePergunta(this)">
           <h1 class="start__title">Pergunta 2</h1>
           <ion-icon name="create-outline"></ion-icon>
@@ -117,30 +116,25 @@
         <div class="start__question hidden"></div>       
       </div>      
       <div class="button__position">
-        <button class="start__button">Prosseguir pra criar níveis
+        <button class="start__button" onclick="changeToCreateLevels()">Prosseguir pra criar níveis
         </button>
       </div>
     </section>
-
     <!-- CRIANDO NÍVEIS -->
-    <section class="create__levels">
+    <section class="create__levels hidden">
       <div class="start">
         <h1 class="start__title">Agora, decida os níveis</h1>
-        <div class="start__data">
-          <label for="">Nível 1</label>
-          <input type="text" placeholder="Título do nível">
-          <input type="text" placeholder="% de acerto mínima">
-          <input type="text" placeholder="URL da imagem do nível">
-          <input type="text" placeholder="Descrição do nível">
+        <div class="start__levels"></div>
+        <div class="questions" onclick="toggleNivel(this)">
+          <h1 class="start__title">Nível 2</h1>
+          <ion-icon name="create-outline"></ion-icon>
         </div>
-      </div>
-      <div class="questions">
-        <h1 class="start__title">Nível 2</h1>
-        <ion-icon name="create-outline"></ion-icon>
-      </div>
-      <div class="questions">
-        <h1 class="start__title">Nível 3</h1>
-        <ion-icon name="create-outline"></ion-icon>
+        <div class="start__levels hidden"></div>
+        <!-- <div class="questions" onclick="toggleNivel(this)">
+          <h1 class="start__title">Nível 3</h1>
+          <ion-icon name="create-outline"></ion-icon>
+        </div> -->
+        <!-- <div class="start__levels hidden"></div> -->
       </div>
       <div class="button__position">
         <button class="start__button">Finalizar Quizz
