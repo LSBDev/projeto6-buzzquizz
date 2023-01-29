@@ -30,6 +30,7 @@ function changeToCreateLevels() {
   document.querySelector('.create__quizz').classList.add('hidden');
   document.querySelector('.creating__quizz').classList.add('hidden');
   document.querySelector('.create__levels').classList.remove('hidden');
+	criandoQuizz();
 }
 //TROCA DAS PERGUNTAS.
 function togglePergunta(element) {
@@ -49,20 +50,32 @@ function fillPerguntas() {
       </div>
       <div class="start__question hidden">
         <label for="">Pergunta ${i + 1}</label>
-        <input type="text" placeholder="Texto da pergunta">
-        <input type="text" placeholder="Cor de fundo da pergunta">
+				<div class='questionInfo'>
+					<input type="text" placeholder="Texto da pergunta">
+					<input type="text" placeholder="Cor de fundo da pergunta">
+				</div>
         <label for="">Resposta Correta</label>
-        <input type="text" placeholder="Resposta correta">
-        <input type="text" placeholder="URL da imagem">
-        <label for="">Respostas incorretas</label>
-        <input type="text" placeholder="Resposta incorreta 1">
-        <input type="text" placeholder="URL da imagem 1">
-        <br>
-        <input type="text" placeholder="Resposta incorreta 2">
-        <input type="text" placeholder="URL da imagem 2">
-        <br>
-        <input type="text" placeholder="Resposta incorreta 3">
-        <input type="text" placeholder="URL da imagem 3">
+				<div class='answers'>
+					<div class='answerInput'>
+						<input type="text" placeholder="Resposta correta">
+						<input type="text" placeholder="URL da imagem">
+					</div>
+					<label for="">Respostas incorretas</label>
+					<div class='answerInput'>
+						<input type="text" placeholder="Resposta incorreta 1">
+						<input type="text" placeholder="URL da imagem 1">
+					</div>
+					<br>
+					<div class='answerInput'>
+						<input type="text" placeholder="Resposta incorreta 2">
+						<input type="text" placeholder="URL da imagem 2">
+					</div>
+					<br>
+					<div class='answerInput'>
+						<input type="text" placeholder="Resposta incorreta 3">
+						<input type="text" placeholder="URL da imagem 3">
+					</div>
+				</div>
       </div>
       `;
   }
@@ -90,23 +103,46 @@ fillNiveis();
 
 axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes').then((resonse)=>{console.log(resonse.data)});
 
-const postQuizz = {
-  title: document.querySelector('#title-quizz').value,
-  image: document.querySelector('#image-quizz').value
+
+
+function criandoQuizz() {
+	const postQuizz = {
+		title: document.querySelector('#title-quizz').value,
+		image: document.querySelector('#image-quizz').value
+	}	
+	//CRIANDO ARRAY DE QUESTÕES VAZIO!
+	const arrayQuestions = [];
+	let template = document.querySelectorAll('.start__question');
+	//FOR PARA PREENCHER O ARRAY DE QUESTÕES
+	for(let i = 0; i < qntQuestions; i++) {
+		//CRIANDO OBJETO VAZIO
+		let objQuestion = {};
+		//PREENCHENDO OS ATRIBUTOS DO OBJETO
+		objQuestion.title = template[i].getElementsByClassName('questionInfo')[0].children[0].value;
+		objQuestion.color = template[i].getElementsByClassName('questionInfo')[0].children[1].value;
+		//CRIANDO UM ARRAY DE RESPOSTAS VAZIO
+		let arrayAnswers = [];
+		let answers = template[i].getElementsByClassName('answers')[0].getElementsByClassName('answerInput');
+		for(let j = 0; j < answers.length; j++) {
+			//CRIANDO UM OBJETO DE RESPOSTAS VAZIO
+			let objAnswer = {};
+			objAnswer.text = answers[j].children[0].value;
+			objAnswer.image = answers[j].children[1].value;
+			if(j == 0) {
+				objAnswer.isCorrectAnswer = true;
+			}else {
+				objAnswer.isCorrectAnswer = false;
+			}
+			arrayAnswers.push(objAnswer);
+		}
+		//PREENCHENDO O OBJETO DE RESPOSTAS
+		objQuestion.answers = arrayAnswers;
+		arrayQuestions.push(objQuestion);
+	}
+	postQuizz.questions = arrayQuestions;
 }
 
-
-const arrayQuestions = [];
-
-
-
-// for(let i = 0; i < qntQuestions; i++) {
-//   let objQuestions = {};
-//   objQuestions.title = 
-
-  
-// }
-
+//CRIAR PARA OS NÍVEIS PREENCHER O POSTQUIZZ E FAZER O POST.
 
 
 const quizz = `{ //OBJETO
