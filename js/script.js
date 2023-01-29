@@ -1,7 +1,10 @@
 let objetoQuizz = [];
 
+<<<<<<< HEAD
+=======
 exibirQuizz();
 
+>>>>>>> 0cefb55133d38122ecb18c2c3cb7fbdf47e91f4a
 function changeToQuizzHub() {
   document.querySelector('.hub__quizz').classList.remove('hidden');
   document.querySelector('.create').classList.add('hidden');
