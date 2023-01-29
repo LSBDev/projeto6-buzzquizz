@@ -60,7 +60,11 @@
   border: 1px dashed #EC362D;
   border-radius: 50px;
   margin-top: 20px;
+
+
 }
+
+
 
 h2 {
   font-family: "Roboto";
@@ -79,6 +83,7 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  
 }
 .all__quizzes h3 {
   font-family: "Roboto";
@@ -87,10 +92,15 @@ h2 {
   line-height: 24px;
   text-align: center;
   margin-top: 110px;
+  overflow:hidden;
+  position: relative;
+  top: -160px;
+  color: #ffffff
 }
 .all__quizzes .quizzes {
   width: 340px;
-  height: 158px;
+  height: 181px;
+  position: relative;
   border-radius: 5px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(image.png);
   margin: 7px 5px;
@@ -317,3 +327,10 @@ h2 {
   transition: linear 0.1s;
   transform: scale(1.05);
 }/*# sourceMappingURL=style.css.map */
+
+.image-quizz{
+
+  Width: 340px;
+  Height:181px;
+  border-radius: 5px;
+}
