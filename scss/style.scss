@@ -36,6 +36,7 @@
   height: 70px;
   background: #EC362D;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
   .global__title {
     margin: auto;
     color: white;
@@ -74,6 +75,19 @@
     border: 1px dashed #EC362D;
     border-radius: 50px;
     margin-top: 20px;
+    cursor: pointer;
+  }
+
+  #button__principal:hover{
+    background: #EC362D;
+    color: white;
+    border: 1px dashed 
+
+  }
+
+  button:hover{
+    transition: linear 0.2s;
+    transform: scale(1.1);
   }
 }
 h2 {
@@ -271,7 +285,13 @@ h2 {
     color: #000000;
   }
   ion-icon {
+    cursor: pointer;
     font-size: 26px;
+  }
+
+  ion-icon:hover{
+    transition: linear 0.2s;
+    transform: scale(1.1);
   }
 }
 .start__button {
@@ -289,10 +309,12 @@ h2 {
   justify-content: center;
   color: white;
   margin-top: 84px;
+  margin-bottom: 40px;
 }
 .start__button:hover {
-  transition: linear 0.1s;
+  transition: linear 0.2s;
   transform: scale(1.05);
+  background-color: rgb(72, 211, 72);
 }
 
 @media (max-width: 720px) {
@@ -309,6 +331,15 @@ h2 {
   }
   .questions {
     width: 80%;
+  }
+  .start__levels{
+    background: red;
+    width: 100%;
+
+    input{
+      width: 95%;
+    }
+    
   }
 }
 
