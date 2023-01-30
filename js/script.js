@@ -3,7 +3,6 @@ function changeToQuizzHub() {
   document.querySelector('.hub__quizz').classList.remove('hidden');
   document.querySelector('.create').classList.add('hidden');
   document.querySelector('.quizz').classList.add('hidden');
-
 }
 //FUNCAO QUE LEVA PARA O QUIZZ ATIVO.
 function changeToActiveQuizz() {
@@ -35,7 +34,6 @@ function changeToCreateLevels() {
   document.querySelector('.creating__quizz').classList.add('hidden');
   document.querySelector('.create__levels').classList.remove('hidden');
 	fillNiveis();
-	criandoQuizz();
 }
 //TROCA DAS PERGUNTAS.
 function togglePergunta(element) {
@@ -112,7 +110,6 @@ function fillNiveis() {
 }
 fillNiveis();
 
-
 axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes').then((resonse)=>{console.log(resonse.data)});
 
 let postQuizz;
@@ -153,7 +150,6 @@ function criandoQuizz() {
 	}
 	postQuizz.questions = arrayQuestions;
 }
-
 //CRIAR PARA OS NÍVEIS PREENCHER O POSTQUIZZ E FAZER O POST.
 function criandoNiveis() {
 	//CRIAR O ARRAY DE OBJETOS DO NÍVEIS.
@@ -163,94 +159,99 @@ function criandoNiveis() {
 		let objLevel = {};
 		let inputList = niveisList[i].querySelectorAll('input');
 		objLevel.title = inputList[0].value;
-		objLevel.image = inputList[1].value;
-		objLevel.text = inputList[2].value;
-		objLevel.minValue = parseInt(inputList[3].value);		
+		objLevel.image = inputList[2].value;
+		objLevel.text = inputList[3].value;
+		objLevel.minValue = parseInt(inputList[1].value);		
 		arrayLevels.push(objLevel);
 	}
 	postQuizz.levels = arrayLevels;
+	console.log(arrayLevels);
 }
-
 //CRIANDO O POST DO QUIZZ
 function createQuizz() {
-	axios.post('',)
-
+	// let postQuizzString = JSON.stringify(postQuizz);
+	axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', quizz).then((sucesso)=>{
+		console.log(sucesso.data);
+	}), ()=>{console.log('Deu Ruim')
+};
 	changeToQuizzHub();
 	criandoNiveis();
 }
+function moveToLevels() {
+	changeToCreateLevels();
+	criandoQuizz();
+}
 
 
-
-const quizz = `{ //OBJETO
-	title: "Título do quizz", //STRING
-	image: "https://http.cat/411.jpg", //STRING
-	questions: [ //ARRAY DE OBJETOS (JSON)
-		{ //OBJETO
-			title: "Título da pergunta 1", //STRING
-			color: "#123456", //STRING
-			answers: [ //ARRAY DE OBJETOS (JSON)
+//PREENCHENDO O OBJETO NO HARDCODE PRA VALIDAR AS ENTRADAS PRA API.
+const quizz = { 
+	title: "Título do quizz: deve ter no mínimo 20", 
+	image: "https://http.cat/411.jpg", 
+	questions: [ 
+		{ 
+			title: "Texto da pergunta: no mínimo 20 caracteres.", 
+			color: "#123456", 
+			answers: [ 
 				{
-					text: "Texto da resposta 1",//STRING
-					image: "https://http.cat/411.jpg",//STRING
-					isCorrectAnswer: true //BOOLEAN
+					text: "Texto da pergunta: no mínimo 20 caracteres.",
+					image: "https://http.cat/411.jpg",
+					isCorrectAnswer: true 
 				},
 				{
-					text: "Texto da resposta 2",//STRING
-					image: "https://http.cat/412.jpg", //STRING
-					isCorrectAnswer: false //BOOLEAN
+					text: "Texto da pergunta: no mínimo 20 caracteres.",
+					image: "https://http.cat/412.jpg", 
+					isCorrectAnswer: false 
 				}
 			]
 		},
-		{ //OBJETO
-			title: "Título da pergunta 2", //STRING
-			color: "#123456", //STRING
-			answers: [ //ARRAY DE OBJETOS (JSON)
+		{ 
+			title: "Texto da pergunta: no mínimo 20 caracteres.", 
+			color: "#123456", 
+			answers: [ 
 				{
-					text: "Texto da resposta 1", //STRING
-					image: "https://http.cat/411.jpg",//STRING
-					isCorrectAnswer: true //BOOLEAN
+					text: "Texto da pergunta: no mínimo 20 caracteres.", 
+					image: "https://http.cat/411.jpg",
+					isCorrectAnswer: true 
 				},
 				{
-					text: "Texto da resposta 2", //STRING
-					image: "https://http.cat/412.jpg", //STRING
-					isCorrectAnswer: false //BOOLEAN
+					text: "Texto da pergunta: no mínimo 20 caracteres.", 
+					image: "https://http.cat/412.jpg", 
+					isCorrectAnswer: false 
 				}
 			]
 		},
 		{
-			title: "Título da pergunta 3", //STRING
-			color: "#123456", //STRING
+			title: "Texto da pergunta: no mínimo 20 caracteres. 3", 
+			color: "#123456", 
 			answers: [
 				{
-					text: "Texto da resposta 1", //STRING
-					image: "https://http.cat/411.jpg", //STRING
-					isCorrectAnswer: true //BOOLEAN
+					text: "Texto da pergunta: no mínimo 20 caracteres.1", 
+					image: "https://http.cat/411.jpg", 
+					isCorrectAnswer: true 
 				},
 				{
-					text: "Texto da resposta 2", //STRING
-					image: "https://http.cat/412.jpg", //STRING
-					isCorrectAnswer: false //BOOLEAN
+					text: "Texto da pergunta: no mínimo 20 caracteres.2", 
+					image: "https://http.cat/412.jpg", 
+					isCorrectAnswer: false 
 				}
 			]
 		}
 	],
-	levels: [ //ARRAY DE OBJETOS (JSON)
+	levels: [ 
 		{
-			title: "Título do nível 1", //STRING
-			image: "https://http.cat/411.jpg", //STRING
-			text: "Descrição do nível 1", //STRING
+			title: "Título do nível: mínimo de 10 caracteres.", 
+			image: "https://http.cat/411.jpg", 
+			text: "Descrição do nível Descrição do nível: mínimo de 30 caracteres.", 
 			minValue: 0
 		},
 		{
-			title: "Título do nível 2", //STRING
-			image: "https://http.cat/412.jpg", //STRING
-			text: "Descrição do nível 2", //STRING
+			title: "Título do nível: mínimo de 10 caracteres.", 
+			image: "https://http.cat/412.jpg", 
+			text: "Descrição do nível Descrição do nível: mínimo de 30 caracteres.", 
 			minValue: 50
 		}
 	]
-}`
-
-// axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', quizz)
+}
 
 
 

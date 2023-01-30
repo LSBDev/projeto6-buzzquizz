@@ -21,10 +21,7 @@
       <section class="my__quizzes">
         <p>Você não criou nenhum <br>
           quizz ainda :(</p>
-        <button id="button__principal" onclick="changeTocreateQuizzSection()">Criar Quizz</button>
-        <!-- <div class="my">
-          <h2 class="my__title">Lorem, ipsum dolor sit</h2>
-        </div> -->
+        <button onclick="changeTocreateQuizzSection()">Criar Quizz</button>
       </section>
       <h2>Todos os Quizzes</h2>
       <section class="all__quizzes">
@@ -99,23 +96,13 @@
         </div>
       </div>
     </section>
+    <!-- CRIANDO PERGUNTAS -->
     <section class="creating__quizz hidden">
       <div id="perguntas" class="start">
         <h1 class="start__title">Crie suas perguntas</h1>
-        <!-- <div class="start__question"></div>
-        <div class="questions" onclick="togglePergunta(this)">
-          <h1 class="start__title">Pergunta 2</h1>
-          <ion-icon name="create-outline"></ion-icon>
-        </div>
-        <div class="start__question hidden"></div>
-        <div class="questions" onclick="togglePergunta(this)">
-          <h1 class="start__title">Pergunta 3</h1>
-          <ion-icon name="create-outline"></ion-icon>
-        </div>
-        <div class="start__question hidden"></div>        -->
       </div>      
       <div class="button__position">
-        <button class="start__button" onclick="changeToCreateLevels()">Prosseguir pra criar níveis
+        <button class="start__button" onclick="moveToLevels()">Prosseguir pra criar níveis
         </button>
       </div>
     </section>
@@ -123,23 +110,13 @@
     <section class="create__levels hidden">
       <div id="niveis" class="start start__levels">
         <h1 class="start__title">Agora, decida os níveis</h1>
-        <!-- <div  class="start__levels"></div> -->
-        
-        <!-- <div class="start__levels hidden"></div>
-        <div class="questions" onclick="toggleNivel(this)">
-          <h1 class="start__title">Nível 3</h1>
-          <ion-icon name="create-outline"></ion-icon>
-        </div>
-        <div class="start__levels hidden"></div> -->
       </div>
       <div class="button__position">
-        <button class="start__button">Finalizar Quizz
+        <button class="start__button" onclick="createQuizz()">Finalizar Quizz
         </button>
       </div>
     </section>
   </section>
-
-
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
