@@ -332,4 +332,12 @@ h2 {
   .start__levels input {
     width: 95%;
   }
+}
+span {
+  display: none;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-style: italic;
+  margin: 0 0 15px 15px;
+  color: #EC362D;
 }/*# sourceMappingURL=style.css.map */

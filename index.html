@@ -85,10 +85,14 @@
       <div class="start">
         <h1 class="start__title">Comece pelo começo</h1>
         <div class="start__data">
-          <input id="title-quizz" type="text" placeholder="Título do seu quizz">
-          <input id="image-quizz" type="text" placeholder="URL da imagem do seu quizz">
-          <input id="qnt-perguntas-quizz" type="text" placeholder="Quantidade de perguntas do quizz">
-          <input id="qnt-niveis-quizz" type="text" placeholder="Quantidade de níveis do quizz">
+          <input id="title-quizz" type="text" placeholder="Título do seu quizz" oninput="	validateTitle()">
+          <span>Título do quizz: deve ter no mínimo 20 e no máximo 65 caracteres.</span>
+          <input id="image-quizz" type="text" placeholder="URL da imagem do seu quizz" oninput="validadeUrl()">
+          <span>URL da Imagem: deve ter formato de URL.</span>
+          <input id="qnt-perguntas-quizz" type="text" placeholder="Quantidade de perguntas do quizz" oninput="validateQntQuestions()">
+          <span>Quantidade de perguntas: no mínimo 3 perguntas.</span>
+          <input id="qnt-niveis-quizz" type="text" placeholder="Quantidade de níveis do quizz" oninput="validateQntLevels()">
+          <span>Quantidade de níveis: no mínimo 2 níveis.</span>
         </div>
         <div class="button__position">
           <button class="start__button" onclick="changeToCreateQuestions()">Prosseguir pra criar perguntas
