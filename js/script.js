@@ -170,7 +170,7 @@ function criandoNiveis() {
 //CRIANDO O POST DO QUIZZ
 function createQuizz() {
 	// let postQuizzString = JSON.stringify(postQuizz);
-	axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', quizz).then((sucesso)=>{
+	axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', postQuizz).then((sucesso)=>{
 		console.log(sucesso.data);
 	}), ()=>{console.log('Deu Ruim')
 };
@@ -184,74 +184,74 @@ function moveToLevels() {
 
 
 //PREENCHENDO O OBJETO NO HARDCODE PRA VALIDAR AS ENTRADAS PRA API.
-const quizz = { 
-	title: "Título do quizz: deve ter no mínimo 20", 
-	image: "https://http.cat/411.jpg", 
-	questions: [ 
-		{ 
-			title: "Texto da pergunta: no mínimo 20 caracteres.", 
-			color: "#123456", 
-			answers: [ 
-				{
-					text: "Texto da pergunta: no mínimo 20 caracteres.",
-					image: "https://http.cat/411.jpg",
-					isCorrectAnswer: true 
-				},
-				{
-					text: "Texto da pergunta: no mínimo 20 caracteres.",
-					image: "https://http.cat/412.jpg", 
-					isCorrectAnswer: false 
-				}
-			]
-		},
-		{ 
-			title: "Texto da pergunta: no mínimo 20 caracteres.", 
-			color: "#123456", 
-			answers: [ 
-				{
-					text: "Texto da pergunta: no mínimo 20 caracteres.", 
-					image: "https://http.cat/411.jpg",
-					isCorrectAnswer: true 
-				},
-				{
-					text: "Texto da pergunta: no mínimo 20 caracteres.", 
-					image: "https://http.cat/412.jpg", 
-					isCorrectAnswer: false 
-				}
-			]
-		},
-		{
-			title: "Texto da pergunta: no mínimo 20 caracteres. 3", 
-			color: "#123456", 
-			answers: [
-				{
-					text: "Texto da pergunta: no mínimo 20 caracteres.1", 
-					image: "https://http.cat/411.jpg", 
-					isCorrectAnswer: true 
-				},
-				{
-					text: "Texto da pergunta: no mínimo 20 caracteres.2", 
-					image: "https://http.cat/412.jpg", 
-					isCorrectAnswer: false 
-				}
-			]
-		}
-	],
-	levels: [ 
-		{
-			title: "Título do nível: mínimo de 10 caracteres.", 
-			image: "https://http.cat/411.jpg", 
-			text: "Descrição do nível Descrição do nível: mínimo de 30 caracteres.", 
-			minValue: 0
-		},
-		{
-			title: "Título do nível: mínimo de 10 caracteres.", 
-			image: "https://http.cat/412.jpg", 
-			text: "Descrição do nível Descrição do nível: mínimo de 30 caracteres.", 
-			minValue: 50
-		}
-	]
-}
+// const quizz = { 
+// 	title: "Título do quizz: deve ter no mínimo 20", 
+// 	image: "https://http.cat/411.jpg", 
+// 	questions: [ 
+// 		{ 
+// 			title: "Texto da pergunta: no mínimo 20 caracteres.", 
+// 			color: "#123456", 
+// 			answers: [ 
+// 				{
+// 					text: "Texto da pergunta: no mínimo 20 caracteres.",
+// 					image: "https://http.cat/411.jpg",
+// 					isCorrectAnswer: true 
+// 				},
+// 				{
+// 					text: "Texto da pergunta: no mínimo 20 caracteres.",
+// 					image: "https://http.cat/412.jpg", 
+// 					isCorrectAnswer: false 
+// 				}
+// 			]
+// 		},
+// 		{ 
+// 			title: "Texto da pergunta: no mínimo 20 caracteres.", 
+// 			color: "#123456", 
+// 			answers: [ 
+// 				{
+// 					text: "Texto da pergunta: no mínimo 20 caracteres.", 
+// 					image: "https://http.cat/411.jpg",
+// 					isCorrectAnswer: true 
+// 				},
+// 				{
+// 					text: "Texto da pergunta: no mínimo 20 caracteres.", 
+// 					image: "https://http.cat/412.jpg", 
+// 					isCorrectAnswer: false 
+// 				}
+// 			]
+// 		},
+// 		{
+// 			title: "Texto da pergunta: no mínimo 20 caracteres. 3", 
+// 			color: "#123456", 
+// 			answers: [
+// 				{
+// 					text: "Texto da pergunta: no mínimo 20 caracteres.1", 
+// 					image: "https://http.cat/411.jpg", 
+// 					isCorrectAnswer: true 
+// 				},
+// 				{
+// 					text: "Texto da pergunta: no mínimo 20 caracteres.2", 
+// 					image: "https://http.cat/412.jpg", 
+// 					isCorrectAnswer: false 
+// 				}
+// 			]
+// 		}
+// 	],
+// 	levels: [ 
+// 		{
+// 			title: "Título do nível: mínimo de 10 caracteres.", 
+// 			image: "https://http.cat/411.jpg", 
+// 			text: "Descrição do nível Descrição do nível: mínimo de 30 caracteres.", 
+// 			minValue: 0
+// 		},
+// 		{
+// 			title: "Título do nível: mínimo de 10 caracteres.", 
+// 			image: "https://http.cat/412.jpg", 
+// 			text: "Descrição do nível Descrição do nível: mínimo de 30 caracteres.", 
+// 			minValue: 50
+// 		}
+// 	]
+// }
 
 
 
