@@ -26,10 +26,14 @@ function changeToCreateQuestions() {
   fillPerguntas();
 }
 //FUNCAO PARA CRIAR NÍVEIS TELA 3
+let qntLevels;
 function changeToCreateLevels() {
+	qntLevels = document.querySelector('#qnt-niveis-quizz').value;
+	console.log(qntLevels);
   document.querySelector('.create__quizz').classList.add('hidden');
   document.querySelector('.creating__quizz').classList.add('hidden');
   document.querySelector('.create__levels').classList.remove('hidden');
+	fillNiveis();
 	criandoQuizz();
 }
 //TROCA DAS PERGUNTAS.
@@ -85,16 +89,23 @@ function toggleNivel(element) {
   element.classList.add('hidden');
   element.nextElementSibling.classList.remove('hidden');
 }
-
+//CRIANDO OS NÍVEIS
 function fillNiveis() {
-  const niveis = document.querySelectorAll('.start__levels');
-  for(let i = 0; i <niveis.length; i++) {
-    niveis[i].innerHTML = `
-    <label for="">Nível ${i + 1}</label>
-    <input type="text" placeholder="Título do nível">
-    <input type="text" placeholder="% de acerto mínima">
-    <input type="text" placeholder="URL da imagem do nível">
-    <input type="text" placeholder="Descrição do nível">
+  const niveis = document.querySelector('#niveis');
+	console.log(niveis);
+  for(let i = 0; i < qntLevels; i++) {
+    niveis.innerHTML += `
+			<div class="questions" onclick="toggleNivel(this)">
+				<h1 class="start__title">Nível ${i + 1}</h1>
+				<ion-icon name="create-outline"></ion-icon>
+      </div>
+			<div class="levelInfo hidden">
+				<label for="">Nível ${i + 1}</label>
+				<input type="text" placeholder="Título do nível">
+				<input type="text" placeholder="% de acerto mínima">
+				<input type="text" placeholder="URL da imagem do nível">
+				<input type="text" placeholder="Descrição do nível">
+			</div>
     `;
   }
 }
@@ -102,7 +113,6 @@ fillNiveis();
 
 
 axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes').then((resonse)=>{console.log(resonse.data)});
-
 
 
 function criandoQuizz() {
@@ -143,6 +153,7 @@ function criandoQuizz() {
 }
 
 //CRIAR PARA OS NÍVEIS PREENCHER O POSTQUIZZ E FAZER O POST.
+
 
 
 const quizz = `{ //OBJETO
