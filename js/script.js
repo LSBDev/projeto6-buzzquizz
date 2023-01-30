@@ -55,6 +55,7 @@ function fillPerguntas() {
         <label for="">Pergunta ${i + 1}</label>
 				<div class='questionInfo'>
 					<input type="text" placeholder="Texto da pergunta">
+					<span>Texto da pergunta: no mínimo 20 caracteres</span>
 					<input type="text" placeholder="Cor de fundo da pergunta">
 				</div>
         <label for="">Resposta Correta</label>
@@ -181,6 +182,67 @@ function moveToLevels() {
 	changeToCreateLevels();
 	criandoQuizz();
 }
+//VALIDANDO DADOS INICIAIS
+const basicInfo = document.querySelector('.start__data');
+const basicfields = basicInfo.querySelectorAll('input'); // array (Node list)
+const basicSpan = basicInfo.querySelectorAll('span');
+const urlRegexHttps = /(http(s)?):\/\/[(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+
+function setError(index) {
+	basicSpan[index].style.display = 'block';
+
+};
+function removeError(index) {
+	basicSpan[index].style.display = 'none';
+}
+function validateTitle() {
+	if(20 <= basicfields[0].value.length && basicfields[0].value.length <= 65) {
+		console.log('Validou!');
+		removeError(0);
+	}else {
+		setError(0);
+	}	
+}
+function validateQntQuestions() {
+	if(3 <= basicfields[2].value) {
+		console.log('validado');
+		removeError(2);
+	}	else {
+		setError(2);
+	}
+}
+function validateQntLevels() {
+	if(2 <= basicfields[3].value) {
+		console.log('validou!');
+		removeError(3);
+	}else {
+		setError(3);
+	}
+}
+function validadeUrl() {
+	if(urlRegexHttps.test(basicfields[1].value)) {
+		console.log('rodou');
+	} else {
+		console.log('n rodou');
+	}
+}
+
+//VALIDANDO PERGUNTAS 
+// const questionsInfo = document.querySelector('.start__question');
+// const inputQuestion = questionsInfo.querySelector('.questionInfo').querySelectorAll('input');
+// const questionSpan = inputQuestion.querySelectorAll('span');
+
+// function validateTitle() {
+// 	if(20 <= inputQuestion[0].value.length) {
+// 		console.log('Validou!');
+// 		removeError(0);
+// 	}else {
+// 		setError(0);
+// 	}	
+// }
+
+
+
 
 
 //PREENCHENDO O OBJETO NO HARDCODE PRA VALIDAR AS ENTRADAS PRA API.
