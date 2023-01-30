@@ -3,6 +3,7 @@ function changeToQuizzHub() {
   document.querySelector('.hub__quizz').classList.remove('hidden');
   document.querySelector('.create').classList.add('hidden');
   document.querySelector('.quizz').classList.add('hidden');
+
 }
 //FUNCAO QUE LEVA PARA O QUIZZ ATIVO.
 function changeToActiveQuizz() {
@@ -26,10 +27,14 @@ function changeToCreateQuestions() {
   fillPerguntas();
 }
 //FUNCAO PARA CRIAR NÍVEIS TELA 3
+let qntLevels;
 function changeToCreateLevels() {
+	qntLevels = document.querySelector('#qnt-niveis-quizz').value;
+	console.log(qntLevels);
   document.querySelector('.create__quizz').classList.add('hidden');
   document.querySelector('.creating__quizz').classList.add('hidden');
   document.querySelector('.create__levels').classList.remove('hidden');
+	fillNiveis();
 	criandoQuizz();
 }
 //TROCA DAS PERGUNTAS.
@@ -77,7 +82,7 @@ function fillPerguntas() {
 					</div>
 				</div>
       </div>
-      `;
+    `;
   }
 }
 //TROCA DOS NÍVEIS.
@@ -85,16 +90,23 @@ function toggleNivel(element) {
   element.classList.add('hidden');
   element.nextElementSibling.classList.remove('hidden');
 }
-
+//CRIANDO OS NÍVEIS
 function fillNiveis() {
-  const niveis = document.querySelectorAll('.start__levels');
-  for(let i = 0; i <niveis.length; i++) {
-    niveis[i].innerHTML = `
-    <label for="">Nível ${i + 1}</label>
-    <input type="text" placeholder="Título do nível">
-    <input type="text" placeholder="% de acerto mínima">
-    <input type="text" placeholder="URL da imagem do nível">
-    <input type="text" placeholder="Descrição do nível">
+  const niveis = document.querySelector('#niveis');
+	console.log(niveis);
+  for(let i = 0; i < qntLevels; i++) {
+    niveis.innerHTML += `
+			<div class="questions" onclick="toggleNivel(this)">
+				<h1 class="start__title">Nível ${i + 1}</h1>
+				<ion-icon name="create-outline"></ion-icon>
+      </div>
+			<div class="levelInfo hidden">
+				<label for="">Nível ${i + 1}</label>
+				<input type="text" placeholder="Título do nível">
+				<input type="text" placeholder="% de acerto mínima">
+				<input type="text" placeholder="URL da imagem do nível">
+				<input type="text" placeholder="Descrição do nível">
+			</div>
     `;
   }
 }
@@ -103,13 +115,13 @@ fillNiveis();
 
 axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes').then((resonse)=>{console.log(resonse.data)});
 
-
-
+let postQuizz;
 function criandoQuizz() {
-	const postQuizz = {
+	postQuizz = {};
+	postQuizz = {
 		title: document.querySelector('#title-quizz').value,
 		image: document.querySelector('#image-quizz').value
-	}	
+	}
 	//CRIANDO ARRAY DE QUESTÕES VAZIO!
 	const arrayQuestions = [];
 	let template = document.querySelectorAll('.start__question');
@@ -117,12 +129,9 @@ function criandoQuizz() {
 	for(let i = 0; i < qntQuestions; i++) {
 		//CRIANDO OBJETO VAZIO
 		let objQuestion = {};
-		//PREENCHENDO OS ATRIBUTOS DO OBJETO
-		objQuestion.title = template[i].getElementsByClassName('questionInfo')[0].children[0].value;
-		objQuestion.color = template[i].getElementsByClassName('questionInfo')[0].children[1].value;
 		//CRIANDO UM ARRAY DE RESPOSTAS VAZIO
 		let arrayAnswers = [];
-		let answers = template[i].getElementsByClassName('answers')[0].getElementsByClassName('answerInput');
+		let answers = template[i].querySelector('.answers').querySelectorAll('.answerInput');
 		for(let j = 0; j < answers.length; j++) {
 			//CRIANDO UM OBJETO DE RESPOSTAS VAZIO
 			let objAnswer = {};
@@ -136,13 +145,40 @@ function criandoQuizz() {
 			arrayAnswers.push(objAnswer);
 		}
 		//PREENCHENDO O OBJETO DE RESPOSTAS
+		objQuestion.title = template[i].querySelector('.questionInfo').children[0].value;
+		objQuestion.color = template[i].querySelector('.questionInfo').children[1].value;
 		objQuestion.answers = arrayAnswers;
+		console.log(objQuestion);
 		arrayQuestions.push(objQuestion);
 	}
 	postQuizz.questions = arrayQuestions;
 }
 
 //CRIAR PARA OS NÍVEIS PREENCHER O POSTQUIZZ E FAZER O POST.
+function criandoNiveis() {
+	//CRIAR O ARRAY DE OBJETOS DO NÍVEIS.
+	let arrayLevels = [];
+	let niveisList = document.querySelectorAll(".levelInfo");
+	for(let i = 0; i < niveisList.length; i++) {
+		let objLevel = {};
+		let inputList = niveisList[i].querySelectorAll('input');
+		objLevel.title = inputList[0].value;
+		objLevel.image = inputList[1].value;
+		objLevel.text = inputList[2].value;
+		objLevel.minValue = parseInt(inputList[3].value);		
+		arrayLevels.push(objLevel);
+	}
+	postQuizz.levels = arrayLevels;
+}
+
+//CRIANDO O POST DO QUIZZ
+function createQuizz() {
+	axios.post('',)
+
+	changeToQuizzHub();
+	criandoNiveis();
+}
+
 
 
 const quizz = `{ //OBJETO

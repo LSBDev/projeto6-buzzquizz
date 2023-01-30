@@ -65,7 +65,6 @@
           <div class="alternative">
             <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
             <h4>doguinhos - limitar caracteres</h4>
-            <!-- limitar caracteres pra não estourar -->
           </div>
           <div class="alternative">
             <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
@@ -92,7 +91,7 @@
           <input id="title-quizz" type="text" placeholder="Título do seu quizz">
           <input id="image-quizz" type="text" placeholder="URL da imagem do seu quizz">
           <input id="qnt-perguntas-quizz" type="text" placeholder="Quantidade de perguntas do quizz">
-          <input id="qnt-niveis" type="text" placeholder="Quantidade de níveis do quizz">
+          <input id="qnt-niveis-quizz" type="text" placeholder="Quantidade de níveis do quizz">
         </div>
         <div class="button__position">
           <button class="start__button" onclick="changeToCreateQuestions()">Prosseguir pra criar perguntas
@@ -122,19 +121,16 @@
     </section>
     <!-- CRIANDO NÍVEIS -->
     <section class="create__levels hidden">
-      <div class="start">
+      <div id="niveis" class="start start__levels">
         <h1 class="start__title">Agora, decida os níveis</h1>
-        <div class="start__levels"></div>
+        <!-- <div  class="start__levels"></div> -->
+        
+        <!-- <div class="start__levels hidden"></div>
         <div class="questions" onclick="toggleNivel(this)">
-          <h1 class="start__title">Nível 2</h1>
-          <ion-icon name="create-outline"></ion-icon>
-        </div>
-        <div class="start__levels hidden"></div>
-        <!-- <div class="questions" onclick="toggleNivel(this)">
           <h1 class="start__title">Nível 3</h1>
           <ion-icon name="create-outline"></ion-icon>
-        </div> -->
-        <!-- <div class="start__levels hidden"></div> -->
+        </div>
+        <div class="start__levels hidden"></div> -->
       </div>
       <div class="button__position">
         <button class="start__button">Finalizar Quizz
