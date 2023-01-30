@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,20 @@
   <link rel="stylesheet" href="/css/style.css">
   <title>BuzzQuizz</title>
 </head>
+
 <body>
   <header class="global__header">
     <h1 class="global__title">
       BuzzQuizz
     </h1>
   </header>
-  <!-- mudar a classe do header geral-->
   <!-- Tela 1: todos os quizes. -->
-  <section class="hub__quizz hidden">
+  <section class="hub__quizz">
     <main class="hub__main">
       <section class="my__quizzes">
         <p>Você não criou nenhum <br>
           quizz ainda :(</p>
-        <button>Criar Quizz</button>
-        <!-- <div class="my">
-          <h2 class="my__title">Lorem, ipsum dolor sit</h2>
-        </div> -->
+        <button onclick="changeTocreateQuizzSection()">Criar Quizz</button>
       </section>
       <h2>Todos os Quizzes</h2>
       <section class="all__quizzes">
@@ -48,9 +46,8 @@
       </section>
     </main>
   </section>
-
   <!-- Tela 2: Jogando o quiz. -->
-  <section class="quizz">
+  <section class="quizz hidden">
     <!-- <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="descrição da imagem"> -->
     <div class="img">
       <h1 class="quizz__name">O quão Potterhead é você?</h1>
@@ -58,86 +55,13 @@
     <main class="quizz__questions">
       <div class="questions__container">
         <div class="quizz__header">
-          <h2 class="questions">Em qual animal Olho-Tonto Moody transfigurou Malfoy?
+          <h2 class="question">Em qual animal Olho-Tonto Moody transfigurou Malfoy?
           </h2>
         </div>
         <div class="quizz__main">
           <div class="alternative">
             <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
             <h4>doguinhos - limitar caracteres</h4>
-            <!-- limitar caracteres pra não estourar -->
-          </div>
-          <div class="alternative">
-            <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
-          </div>
-          <div class="alternative">
-            <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
-          </div>
-          <div class="alternative">
-            <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
-          </div>
-        </div>
-      </div>
-      <div class="questions__container">
-        <div class="quizz__header">
-          <h2 class="questions">Em qual animal Olho-Tonto Moody transfigurou Malfoy?
-          </h2>
-        </div>
-        <div class="quizz__main">
-          <div class="alternative">
-            <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
-          </div>
-          <div class="alternative">
-            <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
-          </div>
-          <div class="alternative">
-            <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
-          </div>
-          <div class="alternative">
-            <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
-          </div>
-        </div>
-      </div>
-      <div class="questions__container">
-        <div class="quizz__header">
-          <h2 class="questions">Em qual animal Olho-Tonto Moody transfigurou Malfoy?
-          </h2>
-        </div>
-        <div class="quizz__main">
-          <div class="alternative">
-            <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
-          </div>
-          <div class="alternative">
-            <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
-          </div>
-          <div class="alternative">
-            <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
-          </div>
-          <div class="alternative">
-            <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
-          </div>
-        </div>
-      </div>
-      <div class="questions__container">
-        <div class="quizz__header">
-          <h2 class="questions">Em qual animal Olho-Tonto Moody transfigurou Malfoy?
-          </h2>
-        </div>
-        <div class="quizz__main">
-          <div class="alternative">
-            <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
-            <h4>doguinhos</h4>
           </div>
           <div class="alternative">
             <img src="/img/pexels-chevanon-photography-1108099.jpg" alt="doguinhos">
@@ -155,21 +79,52 @@
       </div>
     </main>
   </section>
-
-  <!-- Tela 3: Criando o Quizz -->
-  <section class="create__quizz">
-    <div class="start">
-      <h1 class="start__title">Comece pelo começo</h1>
-      <input type="text">
-      <input type="text">
-      <input type="text">
-      <input type="text">
-    </div>
-
+  <!-- Tela 3: Criação -->
+  <section class="create hidden">
+    <section class="create__quizz">
+      <div class="start">
+        <h1 class="start__title">Comece pelo começo</h1>
+        <div class="start__data">
+          <input id="title-quizz" type="text" placeholder="Título do seu quizz" oninput="	validateTitle()">
+          <span>Título do quizz: deve ter no mínimo 20 e no máximo 65 caracteres.</span>
+          <input id="image-quizz" type="text" placeholder="URL da imagem do seu quizz" oninput="validadeUrl()">
+          <span>URL da Imagem: deve ter formato de URL.</span>
+          <input id="qnt-perguntas-quizz" type="text" placeholder="Quantidade de perguntas do quizz" oninput="validateQntQuestions()">
+          <span>Quantidade de perguntas: no mínimo 3 perguntas.</span>
+          <input id="qnt-niveis-quizz" type="text" placeholder="Quantidade de níveis do quizz" oninput="validateQntLevels()">
+          <span>Quantidade de níveis: no mínimo 2 níveis.</span>
+        </div>
+        <div class="button__position">
+          <button class="start__button" onclick="changeToCreateQuestions()">Prosseguir pra criar perguntas
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- CRIANDO PERGUNTAS -->
+    <section class="creating__quizz hidden">
+      <div id="perguntas" class="start">
+        <h1 class="start__title">Crie suas perguntas</h1>
+      </div>      
+      <div class="button__position">
+        <button class="start__button" onclick="moveToLevels()">Prosseguir pra criar níveis
+        </button>
+      </div>
+    </section>
+    <!-- CRIANDO NÍVEIS -->
+    <section class="create__levels hidden">
+      <div id="niveis" class="start start__levels">
+        <h1 class="start__title">Agora, decida os níveis</h1>
+      </div>
+      <div class="button__position">
+        <button class="start__button" onclick="createQuizz()">Finalizar Quizz
+        </button>
+      </div>
+    </section>
   </section>
-
-
-  
-
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="/js/script.js"></script>
 </body>
+
 </html>
